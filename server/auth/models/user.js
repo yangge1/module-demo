@@ -23,8 +23,8 @@ const UserSchema=mongoose.Schema({
     }
 
 })
-userSchema.methods.generateHash = function(password) {
+UserSchema.methods.generateHash = function(password) {
     return bcrypt.compareSync(password,this.hash_password);
 };
 
-module.exports=mongoose.model('user',userSchema);
+module.exports=mongoose.model('user',UserSchema);
